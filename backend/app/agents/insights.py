@@ -13,11 +13,11 @@ def insights_agent(state: AgentState):
     diagnosis = state['diagnosis_result']
     component = diagnosis.probable_component
     
-    # 1. Retrieve relevant docs from Vector DB
+   
     docs = search_rca_docs(component)
     context_text = "\n\n".join([d.page_content for d in docs])
     
-    # 2. Synthesize Insight using LLM
+    
     prompt = ChatPromptTemplate.from_template(
         """
         You are a Manufacturing Quality Engineer.

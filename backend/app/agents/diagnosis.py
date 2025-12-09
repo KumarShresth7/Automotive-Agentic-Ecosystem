@@ -8,8 +8,6 @@ def data_analysis_agent(state: AgentState):
     vehicle_id = state['vehicle_id']
     data = get_vehicle_data(vehicle_id)
     state['telemetry_data'] = data
-    
-    # Rule-Based Trigger (Robust for demo)
     if data['engine_temp_c'] > 105.0:
         state['data_analysis_alert'] = {
             "alert_type": "Critical", 

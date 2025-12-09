@@ -3,14 +3,14 @@ from datetime import datetime, timedelta
 
 def get_vehicle_data(vehicle_id: str):
     """Simulates fetching real-time data from a vehicle."""
-    # Simulation: Always return 'overheating' data for the demo
+
     return {
         "vehicle_id": vehicle_id,
         "timestamp": datetime.now().isoformat(),
-        "engine_temp_c": 112.5, # Overheating scenario
+        "engine_temp_c": 112.5, 
         "oil_pressure_psi": 35.0,
         "rpm": 2500,
-        "dtc_codes": ["P0301"]  # Misfire code
+        "dtc_codes": ["P0301"] 
     }
 
 def get_available_slots():

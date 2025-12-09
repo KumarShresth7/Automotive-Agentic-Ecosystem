@@ -6,8 +6,7 @@ def customer_engagement_agent(state: AgentState):
     """Uses Gemini to generate a persuasive message."""
     print("--- 💬 Engaging Customer (LLM) ---")
     diagnosis = state['diagnosis_result']
-    
-    # If we already have history, don't regenerate the greeting
+
     if state.get("chat_history"):
         return state
 
@@ -25,7 +24,7 @@ def customer_engagement_agent(state: AgentState):
     )
     
     chain = prompt_template | llm
-    
+
     response = chain.invoke({
         "component": diagnosis.probable_component,
         "fault": diagnosis.fault_description,
